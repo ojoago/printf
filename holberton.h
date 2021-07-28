@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 /**
  * struct print - structure for printing various types
@@ -20,6 +19,10 @@ int (*f)(va_list);
 int _putchar(char c);
 int _printf(const char *format, ...);
 void *rev_string(char *s);
+void format_p(va_list valist, char *buffer, int *index);
+void format_lx(va_list valist, char *buffer, int *index);
+void reset_buffer(char buffer[]);
+void _write_buffer(char *buffer, int index);
 int _strlen(char *s);
 int print_c(va_list c);
 int print_s(va_list s);
