@@ -1,18 +1,28 @@
 #include "holberton.h"
- /**
- * format_r - A function reverses string passed in.
- * @valist: argument passed in
- * @buffer: values stored
- * @index: returns pointer to index
+/**
+ * rev_string - reverse string passed in
+ * @s: string passed as argument
+ *
+ * Return: the reversed string
  */
-void format_r(va_list valist, char *buffer, int *index)
+void *rev_string(char *s)
+
 {
-int i, strlen;
-char *s;
-s = va_arg(valist, char *);
-strlen = _strlen(s) - 1;
-for (i = strlen; i >= 0; i--, *index += 1)
+int i = 0;
+int aux = 0;
+char ltemp;
+
+while (*(s + i) != '\0')
+i += 1;
+i -= 1;
+
+while (aux < i)
 {
-buffer[*index] = s[i];
+ltemp = s[i];
+s[i] = s[aux];
+s[aux] = ltemp;
+aux++;
+i--;
 }
+return (s);
 }
