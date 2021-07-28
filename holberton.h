@@ -18,6 +18,8 @@ int (*f)(va_list);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+char *memcpy(char *dest, char *src, unsigned int n);
+int num_len(int num);
 void *rev_string(char *s);
 void format_p(va_list valist, char *buffer, int *index);
 void format_lx(va_list valist, char *buffer, int *index);
